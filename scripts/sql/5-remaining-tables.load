@@ -1,0 +1,19 @@
+LOAD DATABASE
+     FROM mysql://USERNAME:changeme@mysql-host:3306/metabase
+     INTO postgresql://USERNAME:changeme@postgres-host:5432/metabase
+
+ WITH
+    data only,
+    create no indexes,
+    include no drop
+
+including only table names matching ~/.*/
+excluding table names matching 'DATABASECHANGELOG', 'DATABASECHANGELOGLOCK',  'data_migrations', 'core_user', 'view_log', 'query_execution', 'revision', 'query'
+
+BEFORE LOAD DO
+    $$ alter table metabase.report_dashboardcard RENAME "sizeX" to "sizex"; $$,
+    $$ alter table metabase.report_dashboardcard RENAME "sizeY" to "sizey"; $$
+    
+AFTER LOAD DO
+    $$ alter table metabase.report_dashboardcard RENAME "sizex" to "sizeX"; $$,
+    $$ alter table metabase.report_dashboardcard RENAME "sizey" to "sizeY" $$;

@@ -1,0 +1,10 @@
+LOAD DATABASE
+     FROM mysql://USERNAME:changeme@mysql-host:3306/metabase
+     INTO postgresql://USERNAME:changeme@postgres-host:5432/metabase
+
+ WITH
+    data only,
+    create no indexes,
+    include no drop
+
+including only table names matching 'core_user', 'view_log';

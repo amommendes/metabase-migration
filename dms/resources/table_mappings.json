@@ -1,0 +1,192 @@
+{
+  "rules": [
+    {
+      "rule-type": "transformation",
+      "rule-id": "1",
+      "rule-name": "1",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "report_dashboardcard",
+        "column-name": "sizeY"
+      },
+      "rule-action": "rename",
+      "value": "sizey"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "2",
+      "rule-name": "2",
+      "rule-target": "column",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "report_dashboardcard",
+        "column-name": "sizeX"
+      },
+      "rule-action": "rename",
+      "value": "sizex"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "3",
+      "rule-name": "3",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_CALENDARS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_calendars"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "4",
+      "rule-name": "4",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_BLOB_TRIGGERS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_blob_triggers"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "5",
+      "rule-name": "5",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_CRON_TRIGGERS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_cron_triggers"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "6",
+      "rule-name": "6",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_FIRED_TRIGGERS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_fired_triggers"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "7",
+      "rule-name": "7",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_JOB_DETAILS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_job_details"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "8",
+      "rule-name": "8",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_LOCKS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_locks"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "9",
+      "rule-name": "9",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_PAUSED_TRIGGER_GRPS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_paused_trigger_grps"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "10",
+      "rule-name": "10",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_SCHEDULER_STATE"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_scheduler_state"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "11",
+      "rule-name": "11",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_SIMPLE_TRIGGERS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_simple_triggers"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "12",
+      "rule-name": "12",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_SIMPROP_TRIGGERS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_simprop_triggers"
+    },
+    {
+      "rule-type": "transformation",
+      "rule-id": "13",
+      "rule-name": "13",
+      "rule-target": "table",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "QRTZ_TRIGGERS"
+      },
+      "rule-action": "rename",
+      "value": "qrtz_triggers"
+    },
+    {
+      "rule-type": "selection",
+      "rule-id": "14",
+      "rule-name": "14",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "%"
+      },
+      "rule-action": "include"
+    },
+    {
+      "rule-type": "selection",
+      "rule-id": "15",
+      "rule-name": "15",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "data_migrations"
+      },
+      "rule-action": "exclude"
+    },
+    {
+      "rule-type": "selection",
+      "rule-id": "16",
+      "rule-name": "16",
+      "object-locator": {
+        "schema-name": "metabase",
+        "table-name": "DATABASECHANGE%"
+      },
+      "rule-action": "exclude"
+    }
+  ]
+}

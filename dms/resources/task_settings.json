@@ -1,0 +1,28 @@
+{
+    "FullLoadSettings": {
+      "TargetTablePrepMode": "DO_NOTHING",
+      "CreatePkAfterFullLoad": false,
+      "StopTaskCachedChangesApplied": false,
+      "StopTaskCachedChangesNotApplied": false,
+      "MaxFullLoadSubTasks": 8,
+      "TransactionConsistencyTimeout": 600,
+      "CommitRate": 10000
+    } ,
+    
+    "Logging": {
+      "EnableLogging": true,
+      "LogComponents": [
+        {
+          "Id": "TARGET_LOAD",
+          "Severity": "LOGGER_SEVERITY_DEBUG"
+        },{
+          "Id": "TARGET_APPLY",
+          "Severity": "LOGGER_SEVERITY_ERROR"
+        },{
+          "Id": "TASK_MANAGER",
+          "Severity": "LOGGER_SEVERITY_ERROR"
+      }]
+    } 
+
+
+}

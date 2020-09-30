@@ -1,0 +1,43 @@
+version: "3"
+services:
+  migrator:
+    build:
+      context: .
+      dockerfile: scripts/docker/migrator.Dockerfile
+  postgres-db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: metabase
+      POSTGRES_PASSWORD: changeme
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+  mysql-db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: metabase
+      MYSQL_PASSWORD: metabase
+      MYSQL_ROOT_PASSWORD: changeme
+    volumes:
+      # declare your mount volume /host/dir:/container/dir
+      - ./mysql:/var/lib/mysql
+  metabase:
+    image: metabase/metabase:v0.34.3
+    ports:
+      - 3000:3000
+    env_file:
+      - scripts/env/postgres.env
+
+  metabase-aws:
+    build: 
+      context: .
+      dockerfile: metabase.Dockerfile
+    ports:
+      - 3001:3000
+    env_file:
+      - scripts/env/postgres-aws.env

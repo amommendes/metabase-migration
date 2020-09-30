@@ -1,0 +1,16 @@
+pgdata
+mysql
+metabase-data
+plugins
+*.jar
+secrets
+*.data
+*log
+mysql-aws.env
+postgres-aws.env
+dms/secrets.tfvars
+dms/terraform.tfstate.backup
+dms/terraform.tfstate
+dms/.terraform.tfstate.lock.info
+task-data.json
+*copy.env

@@ -1,0 +1,22 @@
+LOAD DATABASE
+     FROM mysql://USERNAME:changeme@mysql-host:3306/metabase
+     INTO postgresql://USERNAME:changeme@postgres-host:5432/metabase
+
+ WITH
+    data only,
+    create no indexes,
+    include no drop
+
+including only table names matching ~/.*/
+excluding table names matching 'DATABASECHANGELOG', 'DATABASECHANGELOGLOCK',  'data_migrations'
+
+ALTER TABLE NAMES MATCHING ~/.*/  SET SCHEMA 'metabase'
+
+BEFORE LOAD DO
+    $$ alter table report_dashboardcard RENAME "sizeX" to "sizex"; $$,
+    $$ alter table report_dashboardcard RENAME "sizeY" to "sizey"; $$,
+    $$ SELECT truncate_tables('metabase', array['databasechangelog', 'databasechangeloglock', 'data_migrations']); $$
+
+AFTER LOAD DO
+    $$ alter table report_dashboardcard RENAME "sizex" to "sizeX"; $$,
+    $$ alter table report_dashboardcard RENAME "sizey" to "sizeY" $$;

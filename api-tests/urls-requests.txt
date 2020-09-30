@@ -1,0 +1,11 @@
+get api/database?include_tables=true&include_cards=true
+get api/database/XX/metadata
+get app/assets/img/favicon-16x16.png
+get api/database?include_tables=true&include_cards=true
+post api/card/XXXX/query/csv
+get app/assets/imgapple-touch-icon.png
+get app/dist/styles.bundle.css
+post api/card/XXXX/query/xlsx
+get api/database/X/metadata
+post api/card/XXX/query
+get api/database/XXX/autocomplete_suggestions
