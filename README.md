@@ -34,7 +34,7 @@ make prepare-mysql
 init-metabase
 ``` 
 
-3. Open Metabase e configure it:
+3. Open Metabase and configure it:
 
  - [localhost:3000](http://localhost:3000)
 
